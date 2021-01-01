@@ -19,6 +19,7 @@
                 <h3><?php echo $noticia['titulo'];?></h3>
                 <h4><?php echo $noticia['categoria'];?></h4>
                 <p><?php echo $noticia['conteudo'];?></p>
+                <button id="buttom-noticia">Acessar</button>
             </div>
         <?php endforeach;?>
     <?php else :?>

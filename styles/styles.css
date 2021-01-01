@@ -1,0 +1,234 @@
+/*VAR*/
+:root{
+    --back-color: rgba(190, 190, 190, 0.89);
+    --back-container-color : rgba(221, 221, 221, 0.89);
+    --text-color: black;
+    --box-notice-color : white;
+    --cor-buttom:  #6d6e6eb9;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+
+/*HEADER*/
+.header-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   background-color:var(--back-color);  
+  
+}
+
+.logo-container > a{
+    text-transform: uppercase;
+    display: block;
+    color: var(--text-color);
+    padding: 10px 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.logo-container > a:hover, .nav-menu  ul li a:hover{
+   
+    background-color: rgb(71, 71, 71);
+    color: white;
+    font-size: 15px;
+
+}
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nav-menu  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+   
+    text-transform: uppercase;
+}
+.nav-menu  ul li a{
+    display: block;
+    padding: 10px;
+    margin: 0px 10px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.menu-nav-buscar{
+    background: var(--cor-buttom);
+    height: 20px ;
+    border-radius: 20px;
+    padding: 6px;
+}
+.menu-nav-buscar input::placeholder{
+    color: white;
+    
+}
+
+.menu-nav-buscar button:focus, .box-noticia button:focus{
+    outline: none;
+}
+
+
+.search-btn{   
+    float: right;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background:white;
+    display: flex;
+    justify-content: center;
+    align-items: center ;   
+    border: none;
+}
+.search-btn img{
+    height: 50%;
+    width: 50%;
+    
+}
+.menu-nav-buscar:hover > .search-txt{
+    width: 100px;
+    padding: 0 5px;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;  
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 12px;
+    transition: 0.5s;
+    line-height: 20px; 
+    width: 0px;
+}
+
+
+
+
+
+@media (max-width :600px){
+   .header-container, .nav-menu, .nav-menu ul{
+       flex-direction: column;
+       
+    }
+    .header-container{
+       padding-top: 10px;
+
+    }
+ 
+}
+
+/*INDEX.PHP*/
+.container{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 0;
+    background-color: var(--back-container-color);
+}
+
+.box-noticia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; 
+    background-color: var(--box-notice-color);
+    max-width: 200px;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.box-noticia h3{
+    text-align:center;
+
+}
+
+.box-noticia h4{
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.box-noticia p{
+   
+    text-align: justify;
+    align-self: center;
+    flex-wrap: wrap;
+    width: 200px;
+    
+    
+}
+.box-noticia #buttom-noticia{
+    border: none;
+   
+    margin-top: auto;
+    width: 80%;
+    border-radius: 10px;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: initial;
+    font-weight: bold;
+    background-color: var(--back-color);
+}
+
+
+/*Cadastrar noticia*/
+.formulario-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    gap: 10px;
+    
+    width: 500px;
+    max-width: 800px;
+}
+
+.formulario-box input, .formulario-box textarea, .formulario-box h1 {
+    border: none;
+    text-align: center;
+    text-transform: lowercase;
+    
+    
+}
+
+.box-sucesso{
+    display: block;
+    background-color: green;
+    color: white;
+    text-align: center;
+    margin:  0 auto;
+    height: 30px;
+}
+.box-falha{
+    display: block;
+    height: 30px;
+    margin:  0 auto;
+    background-color: red;
+    color: white;
+    text-align: center;
+
+}
+/*FOOTER*/
+footer{
+    padding: 20px 0;
+    text-align: center;
+    margin: auto;
+    background-color: var(--back-color);
+    
+}
