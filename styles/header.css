@@ -1,0 +1,124 @@
+@import "styles.css";
+
+/*Header*/
+.responsive{
+    display: none;
+}
+
+header{
+    background-color: var(--color-dark);
+}
+
+.responsive-container,
+.header-container .nav,
+.header-container .nav-buscar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header-container{
+    padding: 5px 0;
+    margin:  0 auto;
+    max-width: 800px;
+}
+
+.header-container .link-container{
+    text-transform: uppercase;
+    color: var(--txt-dark);
+    font-size: var(--big);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 0 20px;
+}
+
+.header-container .nav-buscar .buscar-btn,
+.header-container .nav-buscar .buscar-btn img,
+.header-container .nav-buscar .buscar-txt,
+.header-container .nav-buscar .buscar-btn:active{
+    outline: none;
+    border: none;
+    background: none;
+}
+.header-container .nav-buscar .buscar-txt,
+.header-container .nav-buscar .buscar-txt::-webkit-input-placeholder{
+    font-size: var(--regular);
+    color: var(--txt-);
+    background-color: var(--color-lighter);
+    padding: 8px 5px;
+    border-radius: 20px;
+    
+}
+
+.header-container .nav-buscar {
+    position: relative;
+    
+}
+
+.header-container .nav-buscar .buscar-btn{
+    position: absolute;
+    background-color: var(--color-lighter);
+    right: 0;
+    padding: 13px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+.header-container .nav-buscar .buscar-btn img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-10%,10%);
+    width: 20px;
+    height:20px;
+    
+}
+
+.header-container .link-container:hover{
+    background-color: var(--color-darker);
+    color: var(--color-white);
+    font-size: var(--regular-up);
+}
+
+
+/*Estilo de variavel*/
+
+.hidden{
+    visibility: hidden;
+}
+.none{
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+
+/*MEDIA RESPONSIVA*/
+
+@media( max-width:500px){
+   
+
+    .responsive-container{
+        display: none;
+    }
+    
+    .responsive{
+        display: block;
+        width: 40px;
+        height: 30px;
+        margin:  0 0 0 auto;
+        padding-right: 10px;
+        z-index: 10;
+ 
+    }
+    .responsive span{    
+        display: block;
+        margin: 4px 0;
+        border: 3px solid black;
+        border-radius: 2px;
+        width: 30px;
+        background-color: black;
+    }
+}

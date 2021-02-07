@@ -19,11 +19,11 @@
                 <h3><?php echo $noticia['titulo'];?></h3>
                 <h4><?php echo $noticia['categoria'];?></h4>
                 <p><?php echo $noticia['conteudo'];?></p>
-                <button id="buttom-noticia">Acessar</button>
+                <a>Acessar</a>
             </div>
         <?php endforeach;?>
     <?php else :?>
-        <h1>Nenhuma noticia encontrada.</h1>
+        <h1 class="nenhuma">Nenhuma noticia encontrada.</h1>
     <?php endif;?>
 </div>
 

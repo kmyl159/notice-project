@@ -1,29 +1,19 @@
 
-   var headerContainer = document.querySelector(".header-container")
-   var navMenu = document.querySelector(".nav-menu")
-   var checkBox =  document.getElementById("check")
-   var label =  document.getElementById("label")
-   var id = checkBox.id
-  
-
+   var responsiveContainer = document.querySelector(".responsive-container")
+   var nav = document.querySelector(".nav")  
+   var checkBox =  document.querySelector(".responsive")
+   
    checkBox.addEventListener('click',()=>{   
-      if(checkBox.id == "checked"){
-         headerContainer.style.gridTemplateRows = '1fr'
-         navMenu.style.display = 'none'
-         checkBox.id = 'check' 
-         label.setAttribute('for','check')
-         return true 
-      }
-      if(checkBox.id=="check"){
-         headerContainer.style.gridTemplateRows = '1fr 1fr'
-         navMenu.style.display = 'flex'
-         navMenu.style.flexDirection = 'column'
-         checkBox.id = 'checked'
-         label.setAttribute('for','checked')
-         return true
-      }
+      responsiveContainer.classList.toggle("none");
+      nav.classList.toggle("none");
    })
    
+   window.addEventListener('resize',()=>{
+      if(window.innerWidth > 500){
+         responsiveContainer.classList.remove("none")
+         nav.classList.remove("none");
+      }
+   })
 
 
  

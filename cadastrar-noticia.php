@@ -17,7 +17,7 @@
     }
 ?>
 
-<div class="container">
+<div class="cadastro-container">
     <form method="POST" class="formulario-box">
         <h1>cadastrar noticia</h1>
         <input type="text" name="titulo" placeholder="Titulo da noticia"  required="required">

@@ -1,0 +1,51 @@
+/*Cadastrar noticia*/
+
+.cadastro-container{
+    background-color: var(--color-light);
+    width: 100vw;
+}
+.formulario-box{
+    grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+     
+    gap: 10px 0;
+    padding: 30px;
+    max-width: 800px;
+}
+.formulario-box h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--txt-dark);
+    font-size: var(--bigger);
+}
+
+.formulario-box input, .formulario-box textarea{
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--txt-dark);
+    font-size: var(--bigger);
+    outline: none;
+    border: none;
+    text-align: center;
+    text-transform: lowercase; 
+}
+
+.box-sucesso{
+    display: block;
+    background-color: green;
+    color: white;
+    text-align: center;
+    margin:  0 auto;
+    height: 30px;
+}
+.box-falha{
+    display: block;
+    height: 30px;
+    margin:  0 auto;
+    background-color: red;
+    color: white;
+    text-align: center;
+}

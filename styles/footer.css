@@ -1,0 +1,9 @@
+/*FOOTER*/
+footer{
+   
+    text-align: center;
+    background-color: var(--color-dark);
+    width: 100vw;
+    padding: 10px;
+   
+}
