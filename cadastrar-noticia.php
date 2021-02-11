@@ -3,10 +3,8 @@
         require_once 'classes/noticia.php';
         
     global $pdo;
-
+    
     $n = new Noticia();
-
-   
     $cadastro = null;
     
     if(isset($_POST['titulo']) AND isset($_POST['categoria']) AND isset($_POST['conteudo'])){

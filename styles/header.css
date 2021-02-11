@@ -6,7 +6,9 @@
 }
 
 header{
-    background-color: var(--color-dark);
+    outline: none;
+    border: none;
+    background-image: var(--color-secondary-linear);
 }
 
 .responsive-container,
@@ -28,7 +30,7 @@ header{
 .header-container .link-container{
     text-transform: uppercase;
     color: var(--txt-dark);
-    font-size: var(--big);
+    font-size: 1rem;
     font-weight: bold;
     padding: 10px;
     border-radius: 8px;
@@ -45,9 +47,9 @@ header{
 }
 .header-container .nav-buscar .buscar-txt,
 .header-container .nav-buscar .buscar-txt::-webkit-input-placeholder{
-    font-size: var(--regular);
-    color: var(--txt-);
-    background-color: var(--color-lighter);
+    font-size: 1rem;
+    color: var(--txt-dark);
+    background-color: var(--color-secondary-white);
     padding: 8px 5px;
     border-radius: 20px;
     
@@ -60,7 +62,7 @@ header{
 
 .header-container .nav-buscar .buscar-btn{
     position: absolute;
-    background-color: var(--color-lighter);
+    background-color: var(--color-secondary-white);
     right: 0;
     padding: 13px;
     border-radius: 50%;
@@ -68,6 +70,7 @@ header{
     height: 20px;
 }
 .header-container .nav-buscar .buscar-btn img{
+    background-image: var(--color-primary-lighter);
     position: absolute;
     top: 0;
     right: 0;
@@ -77,22 +80,15 @@ header{
     
 }
 
-.header-container .link-container:hover{
-    background-color: var(--color-darker);
-    color: var(--color-white);
-    font-size: var(--regular-up);
+.header-container .link-container:hover,
+.header-container .nav-buscar:hover .buscar-txt,
+.header-container .nav-buscar:hover .buscar-txt::-webkit-input-placeholder,
+.header-container .nav-buscar:hover .buscar-btn{
+    background-color: var(--color-primary-dark) !important;
+    color: var(--txt-light);
+    font-size: 1.1rem;
 }
 
-
-/*Estilo de variavel*/
-
-.hidden{
-    visibility: hidden;
-}
-.none{
-    display: flex !important;
-    flex-direction: column !important;
-}
 
 
 /*MEDIA RESPONSIVA*/

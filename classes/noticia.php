@@ -13,7 +13,8 @@ class Noticia {
                     n.titulo AS titulo,
                     n.categoria AS categoria,
                     n.conteudo AS conteudo
-                    FROM camilo.noticia n ";
+                    FROM mysqldb.noticia n
+                    ORDER BY n.id DESC";
     
             if(!empty($filtrar)){
                 $sql .= "WHERE n.titulo LIKE ? OR n.categoria LIKE ?";
@@ -41,13 +42,12 @@ class Noticia {
            global $pdo;
            
 
-            $sql = "INSERT INTO camilo.noticia (titulo,categoria,conteudo)
+            $sql = "INSERT INTO mysqldb.noticia (titulo,categoria,conteudo)
                     VALUES(:titulo,:categoria,:conteudo)";
             $sql = $pdo->prepare($sql);
             $sql->bindvalue(':titulo',$titulo);
             $sql->bindvalue(':categoria',$categoria);
-            $sql->bindvalue(':conteudo',$conteudo);
-            
+            $sql->bindvalue(':conteudo',$conteudo); 
             $sql->execute();
 
         } catch (PDOException $e) {

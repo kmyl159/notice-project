@@ -18,10 +18,10 @@
                 <span></span>
             </div>
             <div class="responsive-container">
-                <a href="index.php" class="link-container"> logo</a>
+                <a href="index.php" class="link-container " id="logo"> logo</a>
                 <nav class="nav">
                         
-                    <a href="cadastrar-noticia.php" class="link-container">cadastrar noticia</a>
+                    <a href="cadastrar-noticia.php" class="link-container " id="cadastro">cadastrar noticia</a>
                     
                     <form action="index.php" method="GET" class="nav-buscar">
                         <input type="text" name="filtrar" placeholder="Busca" class="buscar-txt">

@@ -1,0 +1,30 @@
+/*VAR*/
+:root{
+  --color-primary: rgb(255, 0, 0);
+  --color-primary-darker: rgb(56, 0, 0);
+  --color-primary-dark: rgb(104, 0, 0);
+  --color-primary-regular: rgb(153, 0, 0);
+  --color-primary-light: rgb(214, 51, 51);
+  --color-primary-lighter: rgb(223, 96, 96);
+  --color-primary-white: rgb(241, 135, 135);
+  --color-primary-transparent: rgba(255, 0, 0, 0.247);
+  --color-primary-linear: linear-gradient(to top, rgb(255, 0, 0), rgb(255, 102, 0));
+  
+  
+  --color-secondary: rgb(255, 102, 0);
+  --color-secondary-darker:  rgb(255, 38, 0);
+  --color-secondary-dark:  rgb(255, 72, 0);
+  --color-secondary-regular: rgb(255, 136, 0);
+  --color-secondary-light: rgb(255, 166, 0);
+  --color-secondary-lighter:  rgb(255, 235, 52);
+  --color-secondary-white:  rgb(250, 213, 112);
+  --color-secondary-transparent: rgba(255, 102, 0, 0.288);
+  --color-secondary-linear: linear-gradient(to top, rgb(255, 102, 0),rgb(255, 0, 0));
+  
+  
+  --txt-dark: rgba(0, 0, 0, 0.89);
+  --txt-regular: rgba(75, 75, 75, 0.89);
+  --txt-light: rgba(214, 211, 211, 0.89);
+
+  font-size: 16px;
+}

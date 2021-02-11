@@ -2,7 +2,7 @@
 
 global $pdo;
 
-$dns = "mysql:dbname = camilo; host = localhost; charset = utf8";
+$dns = "mysql:dbname = mysqldb; host = localhost; charset = utf8";
 $user ="root";
 $password = "";
 
