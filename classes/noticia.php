@@ -42,7 +42,7 @@ class Noticia{
         try {
             global $pdo;
             
-            $submit = filter_input(INPUT_POST,'enviar',FILTER_SANITIZE_STRING);
+            $submit = filter_input(INPUT_POST,'cadastrar',FILTER_SANITIZE_STRING);
 
             if($submit){
                 $titulo = addslashes(filter_input(INPUT_POST,'titulo',FILTER_SANITIZE_STRING));
@@ -83,6 +83,27 @@ class Noticia{
 
         } catch (PDOException $e) {
             echo "Erro ao cadastrar noticia : ". $e->getMessage();
+            exit;
+        }
+    }
+
+    public function editarNoticia($id){
+        try{
+            global $pdo;
+
+            $sql = "SELECT n.id AS id,
+                    n.titulo AS titulo,
+                    n.categoria AS categoria,
+                    n.conteudo AS conteudo
+                    FROM mysqldb.noticia n
+                    WHERE id ='$id'";
+
+            $sql = $pdo->query($sql);
+            
+
+
+        }catch(PDOException $e){
+            echo 'erro ao editar noticia:' .$e->getMessage();
             exit;
         }
     }

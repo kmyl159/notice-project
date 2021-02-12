@@ -19,7 +19,7 @@
                 <h3><?php echo $noticia['titulo'];?></h3>
                 <h4><?php echo $noticia['categoria'];?></h4>
                 <p><?php echo $noticia['conteudo'];?></p>
-                <a>Acessar</a>
+                <a href="box.php">Acessar</a>
             </div>
         <?php endforeach;?>
     <?php else :?>
