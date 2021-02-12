@@ -58,19 +58,26 @@
     text-transform: lowercase; 
 }
 
-.box-sucesso{
-    display: block;
-    background-color: green;
-    color: white;
+.box-sucesso,
+.box-falha,
+.box-existente{
+    width: 500px;
+    padding: 10px;
+    border-radius: 20px;
     text-align: center;
-    margin:  0 auto;
-    height: 30px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    margin: auto;
+    margin-top: -20px;
+    margin-bottom: 5px;
+    color: var(--txt-light);
 }
+
+.box-existente,
 .box-falha{
-    display: block;
-    height: 30px;
-    margin:  0 auto;
     background-color: red;
-    color: white;
-    text-align: center;
+}
+
+.box-sucesso{
+    background-color: seagreen;
 }
