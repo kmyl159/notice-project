@@ -17,3 +17,8 @@
   border-radius: 10px;
   background: var(--color-secondary-white);
 }
+
+.formulario-box  .destaque{
+  background-image: var(--color-secondary-linear);
+  cursor: pointer;
+}

@@ -36,9 +36,31 @@ class Noticia{
            echo "Erro ao retornar noticias: " . $e->getMessage();
            exit;
         } 
-    }
+    } /* OK */
 
-    public function cadastrarNoticia($cadastro){
+    public function retornarNoticiaId($id){
+        try {
+            global $pdo;
+
+            $sql = "SELECT *
+                    FROM mysqldb.noticia n
+                    WHERE id ='$id'";
+
+            $sql = $pdo->query($sql);
+
+            $data = $sql->fetch();
+
+            if(isset($data)){
+                return $data;
+            }
+            
+        } catch (PDOException $e) {
+           echo "Erro ao retornar noticias: " . $e->getMessage();
+           exit;
+        } 
+    } /* OK */
+
+    public function cadastrarNoticia(){
         try {
             global $pdo;
             
@@ -60,9 +82,12 @@ class Noticia{
                             OR conteudo = '$conteudo'
                             ";
                     $existente = $pdo->query($existente);
-                    if($existente){
-                        $cadastro = 'existente';
-                        return $cadastro ;
+
+                    $result = $existente->fetch();
+                  
+                    if($result){
+                       return 'existente';
+                        
                     }else{
                         $sql = "INSERT INTO mysqldb.noticia (titulo,categoria,conteudo)
                                 VALUES(:titulo,:categoria,:conteudo)";
@@ -71,41 +96,57 @@ class Noticia{
                         $sql->bindvalue(':categoria',$categoria);
                         $sql->bindvalue(':conteudo',$conteudo); 
                         $sql->execute();
-                        $cadastro = "sucesso";
-                        return $cadastro;
+                        return "sucesso";
+                        
                     }
                 }else{
-                    $cadastro ='falha';
-                    return $cadastro;
+                   return 'falha';
                 }
             }
-           
-
         } catch (PDOException $e) {
             echo "Erro ao cadastrar noticia : ". $e->getMessage();
             exit;
         }
-    }
+    } /* OK */
 
     public function editarNoticia($id){
         try{
-            global $pdo;
-
-            $sql = "SELECT n.id AS id,
-                    n.titulo AS titulo,
-                    n.categoria AS categoria,
-                    n.conteudo AS conteudo
-                    FROM mysqldb.noticia n
-                    WHERE id ='$id'";
-
-            $sql = $pdo->query($sql);
+           global $pdo;
             
+           $submit = filter_input(INPUT_POST,'editar',FILTER_SANITIZE_STRING);
 
+           if($submit){
+               $id = addslashes(filter_input(INPUT_POST,'id',FILTER_SANITIZE_NUMBER_INT));
+               $titulo = addslashes(filter_input(INPUT_POST,'titulo',FILTER_SANITIZE_STRING));
+               $categoria = addslashes(filter_input(INPUT_POST,'categoria',FILTER_SANITIZE_STRING));
+               $conteudo = addslashes(filter_input(INPUT_POST,'conteudo',FILTER_SANITIZE_STRING));
+               
+               if((!empty($titulo)) AND (!empty($categoria)) AND (!empty($conteudo))){
+
+                $sql = "UPDATE mysqldb.noticia
+                        SET titulo = :titulo,
+                        categoria = :categoria,
+                        conteudo = :conteudo
+                        WHERE id = '$id'";
+
+                $sql = $pdo->prepare($sql);
+                $sql->bindvalue(':titulo',$titulo);
+                $sql->bindvalue(':categoria',$categoria);
+                $sql->bindvalue(':conteudo',$conteudo); 
+                $sql->execute();
+                return 'sucesso';
+
+               }else{
+                   return 'falha';
+               }
+            
+            }return false;  
 
         }catch(PDOException $e){
             echo 'erro ao editar noticia:' .$e->getMessage();
             exit;
         }
-    }
+    } /* OK */
+
 }
 ?>

@@ -48,6 +48,7 @@ function BtnRender(){
       btn.name = "editar";
       btn.value = "editar";
       btn.type = "submit";
+      btn.classList.add('destaque')
       form.firstElementChild.innerHTML = "EDITAR NOTICIA"
       form.appendChild(btn);
    }
@@ -55,6 +56,7 @@ function BtnRender(){
       btn.name = "cadastrar";
       btn.value = "cadastrar";
       btn.type = "submit";
+      btn.classList.add('destaque')
       form.firstElementChild.innerHTML = "CADASTRAR NOTICIA"
       form.appendChild(btn)
    }

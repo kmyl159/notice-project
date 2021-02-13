@@ -1,5 +1,5 @@
 /*Cadastrar noticia*/
-.cadastro-container{
+.form-container{
     width: 100vw;
     height: 100%;
     position: relative;
@@ -33,6 +33,7 @@
 }
 
 
+
 .formulario-box input::-webkit-input-placeholder, 
 .formulario-box textarea::-webkit-input-placeholder{
     background-color:transparent !important; 
@@ -40,6 +41,7 @@
 
 
 .formulario-box input, 
+.formulario-box a, 
 .formulario-box input::-webkit-input-placeholder, 
 .formulario-box textarea::-webkit-input-placeholder,
 .formulario-box textarea{

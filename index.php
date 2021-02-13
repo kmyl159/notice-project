@@ -5,9 +5,7 @@
 
     $filtrar = null;
     
-    if(isset($_GET['filtrar'])){
-        $filtrar = $_GET['filtrar'];
-    }
+   $filtrar = filter_input(INPUT_GET,'filtrar',FILTER_SANITIZE_STRING);
 
     $noticias = $n->retornarNoticias($filtrar);
 ?>
@@ -19,7 +17,8 @@
                 <h3><?php echo $noticia['titulo'];?></h3>
                 <h4><?php echo $noticia['categoria'];?></h4>
                 <p><?php echo $noticia['conteudo'];?></p>
-                <a href="box.php">Acessar</a>
+                <a href="<?php echo '/noticiaphp/box.php?id='.$noticia['id']?>" 
+                name="acessar">Editar</a>
             </div>
         <?php endforeach;?>
     <?php else :?>
